@@ -13,7 +13,6 @@ public class OutDoorConcert extends Concert{
         duration = 2;
         ticketPrice = calculateTicketPrice();
         beerPrice = 800;
-        //TODO style =
     }
 
     public void cancel(){
@@ -24,5 +23,11 @@ public class OutDoorConcert extends Concert{
         return cancelled;
     }
 
-    //Todo override getProfit() (if cancelled)
+    @Override
+    public int calculateProfit(){
+        if (! isCancelled()) {return super.calculateProfit();}
+        else {
+            return 0;
+        }
+    }
 }

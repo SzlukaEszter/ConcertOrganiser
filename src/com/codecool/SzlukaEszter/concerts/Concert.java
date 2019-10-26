@@ -33,4 +33,22 @@ public abstract class Concert {
     public String toString(){
         return this.getClass() + " mainband: " + mainBand + " warmup: " + warmUpBand;
     }
+
+    public int calculateProfit(){
+        int ticketsSold = ticketsSold();
+        int ticketProfit = (int)Math.round(ticketsSold * ticketPrice * 0.4);
+        int beerProfit = ticketsSold * beerPrice;
+        return ticketProfit + beerProfit;
+    }
+
+    protected int ticketsSold(){
+        if (new Random().nextInt(100)< 80) {
+            return capacity;
+        }
+        else {
+            double randomPercent = (new Random().nextInt(80-70+1) + 70)/100;
+            double ticketsSold = capacity * randomPercent;
+             return (int)(Math.round(ticketsSold));
+        }
+    }
 }

@@ -11,6 +11,7 @@ import com.codecool.SzlukaEszter.concerts.OutDoorConcert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ConcertOrganiser implements ConcertManager, WarmUpPortfolio {
     
@@ -31,10 +32,19 @@ public class ConcertOrganiser implements ConcertManager, WarmUpPortfolio {
 
     public void organise(int numOfConcerts) {
       initConcerts(numOfConcerts);
+      if (isRaining()) {
+          for (OutDoorConcert outdoor : outdoors) {
+              outdoor.cancel();
+          }
+      }
         for (Concert concert : concerts) {
-
+            profit += concert.calculateProfit();
         }
+    }
 
+    private boolean isRaining() {
+        int chance = new Random().nextInt(100);
+        return chance < 30;
     }
 
     private void initConcerts(int numOfConcerts){
