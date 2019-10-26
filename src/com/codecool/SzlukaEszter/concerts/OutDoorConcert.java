@@ -11,7 +11,7 @@ public class OutDoorConcert extends Concert{
         this.cancelled = false;
         capacity = 5000;
         duration = 2;
-        ticketPrice = getTicketPrice();
+        ticketPrice = calculateTicketPrice();
         beerPrice = 800;
         //TODO style =
     }

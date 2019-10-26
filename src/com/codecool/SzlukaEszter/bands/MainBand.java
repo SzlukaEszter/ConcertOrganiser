@@ -1,16 +1,26 @@
 package com.codecool.SzlukaEszter.bands;
 
+import java.util.List;
+import java.util.Random;
+
 public class MainBand extends WarmUpBand{
-    //TODO protected WarmUpPortfolio warmUpPortfolio;
+    protected WarmUpPortfolio wup;
 
 
 
-    public MainBand(String name) {
-        super(name);
+    public MainBand(String name, Style style, WarmUpPortfolio wup) {
+        super(name, style);
+        this.wup = wup;
     }
 
     public WarmUpBand chooseWarmUp(){
-        //TODO IMPLEMENT
+        List<WarmUpBand> warmUpBands = wup.getWarmUps();
+        WarmUpBand output;
+        for (WarmUpBand warmUpBand : warmUpBands) {
+            if (warmUpBand.getStyle() == this.getStyle()){
+                return warmUpBand;
+            }
+        }
         return null;
     }
 }

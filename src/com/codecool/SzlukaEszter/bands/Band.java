@@ -17,4 +17,9 @@ public abstract class Band {
         this.name = name;
         this.style = style;
     }
+
+    @Override
+    public String toString() {
+        return name + " style: " + style.name();
+    }
 }

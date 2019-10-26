@@ -8,7 +8,7 @@ public class FestivalConcert extends Concert {
         super(mainBand);
         capacity = 8000;
         duration = 6;
-        ticketPrice = getTicketPrice();
+        ticketPrice = calculateTicketPrice();
         beerPrice = 1000;
         //todo: style =
     }

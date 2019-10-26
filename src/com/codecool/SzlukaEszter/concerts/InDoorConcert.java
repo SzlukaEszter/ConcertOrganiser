@@ -8,7 +8,7 @@ public class InDoorConcert extends Concert {
         super(mainBand);
         capacity = 3000;
         duration = 1.5;
-        ticketPrice = getTicketPrice();
+        ticketPrice = calculateTicketPrice();
         beerPrice = 600;
         //todo: style =
     }
