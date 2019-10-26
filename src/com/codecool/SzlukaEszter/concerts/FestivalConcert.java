@@ -10,7 +10,16 @@ public class FestivalConcert extends Concert {
         duration = 6;
         ticketPrice = calculateTicketPrice();
         beerPrice = 1000;
-        //todo: style =
+
+    }
+
+    @Override
+    public String toString() {
+        return "Festival, Style: " + style +
+                "\n Artist: " + mainBand +
+                "\n Warmup: " + warmUpBand +
+                "\n Ticketprice: " + ticketPrice +
+                "\n TicketsSold: " + ticketsSold;
     }
 
 }

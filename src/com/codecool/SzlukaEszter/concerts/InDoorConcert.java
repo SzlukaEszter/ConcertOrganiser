@@ -10,6 +10,14 @@ public class InDoorConcert extends Concert {
         duration = 1.5;
         ticketPrice = calculateTicketPrice();
         beerPrice = 600;
-        //todo: style =
+    }
+
+    @Override
+    public String toString() {
+        return "Indoor, Style: " + style +
+                "\n Artist: " + mainBand +
+                "\n Warmup: " + warmUpBand +
+                "\n Ticketprice: " + ticketPrice +
+                "\n TicketsSold: " + ticketsSold;
     }
 }

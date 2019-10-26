@@ -38,7 +38,9 @@ public class ConcertOrganiser implements ConcertManager, WarmUpPortfolio {
           }
       }
         for (Concert concert : concerts) {
-            profit += concert.calculateProfit();
+            int actualProfit = concert.calculateProfit();
+            profit += actualProfit;
+            System.out.println(concert + "\nProfit: " + actualProfit +"\n------------");
         }
     }
 

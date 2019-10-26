@@ -14,6 +14,7 @@ public abstract class Concert {
     protected int ticketPrice;
     protected int beerPrice;
     protected Style style;
+    protected int ticketsSold;
 
 
     public Concert(MainBand mainBand) {
@@ -30,24 +31,26 @@ public abstract class Concert {
         return warmUpBand;
     }
 
-    public String toString(){
-        return this.getClass() + " mainband: " + mainBand + " warmup: " + warmUpBand;
-    }
-
     public int calculateProfit(){
-        int ticketsSold = ticketsSold();
+        setTicketSold(ticketsSold());
         int ticketProfit = (int)Math.round(ticketsSold * ticketPrice * 0.4);
         int beerProfit = ticketsSold * beerPrice;
         return ticketProfit + beerProfit;
     }
 
+    private void setTicketSold(int ticketsSold) {
+        this.ticketsSold = ticketsSold();
+    }
+
     protected int ticketsSold(){
-        if (new Random().nextInt(100)< 80) {
+        Random random = new Random();
+        if (random.nextInt(100)< 80) {
             return capacity;
         }
         else {
-            double randomPercent = (new Random().nextInt(80-70+1) + 70)/100;
-            double ticketsSold = capacity * randomPercent;
+            int randomPercent = random.nextInt(11) + 70;
+
+            double ticketsSold = capacity * randomPercent /100;
              return (int)(Math.round(ticketsSold));
         }
     }

@@ -25,9 +25,20 @@ public class OutDoorConcert extends Concert{
 
     @Override
     public int calculateProfit(){
-        if (! isCancelled()) {return super.calculateProfit();}
+        if (!isCancelled()) {return super.calculateProfit();}
         else {
             return 0;
         }
+    }
+
+    @Override
+    public String toString(){
+        return "OutDoor, Style: " + style +
+                "\n Artist: " + mainBand +
+                "\n Warmup: " + warmUpBand +
+                "\n Ticketprice: " + ticketPrice +
+                "\n TicketsSold: " + ticketsSold +
+                "\n Cancelled: " + cancelled;
+
     }
 }
