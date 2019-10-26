@@ -12,6 +12,7 @@ public class OutDoorConcert extends Concert{
         capacity = 5000;
         duration = 2;
         ticketPrice = getTicketPrice();
+        beerPrice = 800;
         //TODO style =
     }
 
@@ -22,4 +23,6 @@ public class OutDoorConcert extends Concert{
     public boolean isCancelled(){
         return cancelled;
     }
+
+    //Todo override getProfit() (if cancelled)
 }
