@@ -6,7 +6,7 @@ public abstract class Concert {
     protected MainBand mainBand;
    //TODO protected WarmUpBand warmUpBand;
     protected int capacity;
-    protected int duration;
+    protected double duration;
     protected int ticketPrice;
     protected int beerPrice;
    //TODO protected Style style;

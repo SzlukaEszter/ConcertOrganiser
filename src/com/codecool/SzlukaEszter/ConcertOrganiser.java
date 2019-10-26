@@ -24,7 +24,7 @@ public class ConcertOrganiser implements ConcertManager {
     }
 
     public void organise(int numOfConcerts) {
-       // ConcertFactory concertFactory = new concertFactory();
+       //ConcertFactory concertFactory = new concertFactory();
         for (int i = 0; i < numOfConcerts; i++) {
             //concerts.add(concertFactory.createConcert());
         }
