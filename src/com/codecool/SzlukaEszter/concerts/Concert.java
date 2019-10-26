@@ -1,6 +1,7 @@
 package com.codecool.SzlukaEszter.concerts;
 
 import com.codecool.SzlukaEszter.bands.MainBand;
+import com.codecool.SzlukaEszter.bands.Style;
 
 public abstract class Concert {
     protected MainBand mainBand;
@@ -9,11 +10,12 @@ public abstract class Concert {
     protected double duration;
     protected int ticketPrice;
     protected int beerPrice;
-   //TODO protected Style style;
+    protected Style style;
 
 
     public Concert(MainBand mainBand) {
         this.mainBand = mainBand;
+        style = mainBand.getStyle();
     }
 
     protected int getTicketPrice(){

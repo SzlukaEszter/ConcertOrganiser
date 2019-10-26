@@ -2,10 +2,19 @@ package com.codecool.SzlukaEszter.bands;
 
 public abstract class Band {
     protected String name;
-    //TODO protected Style style;
+    protected Style style;
 
 
-    public Band(String name) {
+    public String getName() {
+        return name;
+    }
+
+    public Style getStyle() {
+        return style;
+    }
+
+    public Band(String name, Style style) {
         this.name = name;
+        this.style = style;
     }
 }
